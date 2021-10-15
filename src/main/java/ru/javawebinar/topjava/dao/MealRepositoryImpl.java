@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class MealDaoImpl implements MealDao {
+public class MealRepositoryImpl implements MealRepository {
     private static Map<Integer, Meal> meals = MealStorage.getMeals();
 
     public static List<Meal> getMealList() {
@@ -28,15 +28,15 @@ public class MealDaoImpl implements MealDao {
     }
 
     @Override
-    public void createMeal(LocalDateTime dateTime, String description, int calories) {
+    public Meal createMeal(LocalDateTime dateTime, String description, int calories) {
         Meal meal = new Meal(dateTime, description, calories);
-        meals.put(meal.getId(), meal);
+        return meals.put(meal.getId(), meal);
     }
 
     @Override
-    public void updateMealById(int id, LocalDateTime dateTime, String description, int calories) {
+    public Meal updateMealById(int id, LocalDateTime dateTime, String description, int calories) {
         Meal meal = new Meal(id, dateTime, description, calories);
-        meals.put(id, meal);
+        return meals.put(id, meal);
     }
 
     @Override
