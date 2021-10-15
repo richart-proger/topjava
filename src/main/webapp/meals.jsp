@@ -21,13 +21,12 @@
 <h3><a href="index.html">Home</a></h3>
 <hr>
 <h2>Meals</h2>
-<p><a href="mealServlet?action=create">Add meal</a></p>
+<p><a href="meals?action=create">Add meal</a></p>
 
 
 <table>
     <thead>
     <tr>
-        <th>Id</th>
         <th>Date</th>
         <th>Description</th>
         <th>Calories</th>
@@ -37,7 +36,6 @@
     <tbody>
     <c:forEach var="meal" items="${meals}">
         <tr style="color:${meal.excess ? 'red' : 'green'}">
-            <td><c:out value="${meal.id}"/></td>
             <td>
                 <fmt:parseDate value="${ meal.dateTime }" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime"
                                type="both"/>
@@ -46,8 +44,8 @@
             <td><c:out value="${meal.description}"/></td>
             <td><c:out value="${meal.calories}"/></td>
 
-            <td><a href="mealServlet?action=update&id=<c:out value="${meal.id}"/>">Update</a></td>
-            <td><a href="mealServlet?action=delete&id=<c:out value="${meal.id}"/>">Delete</a></td>
+            <td><a href="meals?action=update&id=<c:out value="${meal.id}"/>">Update</a></td>
+            <td><a href="meals?action=delete&id=<c:out value="${meal.id}"/>">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

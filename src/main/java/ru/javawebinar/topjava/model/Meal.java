@@ -1,6 +1,6 @@
 package ru.javawebinar.topjava.model;
 
-import ru.javawebinar.topjava.dao.MealDaoImpl;
+import ru.javawebinar.topjava.dao.MealRepositoryImpl;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,7 +16,7 @@ public class Meal {
     private final int calories;
 
     public Meal(LocalDateTime dateTime, String description, int calories) {
-        this.id = MealDaoImpl.getCounter().incrementAndGet();
+        this.id = MealRepositoryImpl.getCounter().incrementAndGet();
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
