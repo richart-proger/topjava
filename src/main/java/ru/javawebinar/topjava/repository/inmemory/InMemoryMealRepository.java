@@ -8,6 +8,7 @@ import ru.javawebinar.topjava.repository.MealRepository;
 import ru.javawebinar.topjava.util.DateTimeUtil;
 import ru.javawebinar.topjava.util.MealsUtil;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
@@ -67,11 +68,11 @@ public class InMemoryMealRepository implements MealRepository {
     }
 
     @Override
-    public List<Meal> getAll(Integer userId, LocalTime startTime, LocalTime endTime) {
+    public List<Meal> getAll(Integer userId, LocalDate startTime, LocalDate endTime) {
         log.info("getAll");
         return repository.values().stream()
                 .filter(meal -> meal.getUserId() == userId)
-                .filter(m -> DateTimeUtil.isBetweenHalfOpen(m.getTime(), startTime, endTime))
+                .filter(m -> DateTimeUtil.isBetweenHalfOpen(m.getDate(), startTime, endTime))
                 .sorted((m1, m2) -> m2.getDate().compareTo(m1.getDate()))
                 .collect(Collectors.toList());
     }

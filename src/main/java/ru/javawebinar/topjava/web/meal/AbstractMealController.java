@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.service.MealService;
 
-import java.time.LocalTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import static ru.javawebinar.topjava.util.ValidationUtil.assureIdConsistent;
@@ -41,7 +41,7 @@ public abstract class AbstractMealController {
         return service.get(id, userId);
     }
 
-    public List<Meal> getAll(Integer userId, LocalTime startTime, LocalTime endTime) {
+    public List<Meal> getAll(Integer userId, LocalDate startTime, LocalDate endTime) {
         log.info("getAll with userId={}", userId);
         return service.getAll(userId, startTime, endTime);
     }

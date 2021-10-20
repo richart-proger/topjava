@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import ru.javawebinar.topjava.model.Meal;
+import ru.javawebinar.topjava.to.MealTo;
 import ru.javawebinar.topjava.util.MealsUtil;
 import ru.javawebinar.topjava.web.SecurityUtil;
 
@@ -11,10 +12,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 import java.util.Objects;
+
+import static ru.javawebinar.topjava.util.DateTimeUtil.getLocalDate;
+import static ru.javawebinar.topjava.util.DateTimeUtil.getLocalTime;
 
 @Controller
 public class MealRestController extends AbstractMealController {
@@ -31,11 +37,31 @@ public class MealRestController extends AbstractMealController {
             case "update":
                 createOrUpdate(request, response, action);
                 break;
+            case "filter":
+                filter(request, response);
             case "all":
             default:
                 getListOfMeals(request, response);
                 break;
         }
+    }
+
+    private void filter(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        log.debug("filter{}");
+        String sd = Objects.requireNonNull(request.getParameter("startDate"));
+        String ed = Objects.requireNonNull(request.getParameter("endDate"));
+        String st = Objects.requireNonNull(request.getParameter("startTime"));
+        String et = Objects.requireNonNull(request.getParameter("endTime"));
+
+        LocalDate startDate = sd.isEmpty() ? LocalDate.MIN : getLocalDate(sd);
+        LocalDate endDate = ed.isEmpty() ? LocalDate.MAX : getLocalDate(ed);
+        LocalTime startTime = st.isEmpty() ? LocalTime.MIN : getLocalTime(st);
+        LocalTime endTime = et.isEmpty() ? LocalTime.MAX : getLocalTime(et);
+
+        List<Meal> mealsFilteredByDate = super.getAll(SecurityUtil.authUserId(), startDate, endDate);
+        List<MealTo> mealsFilteredByTime = MealsUtil.getFilteredTos(mealsFilteredByDate, MealsUtil.DEFAULT_CALORIES_PER_DAY, startTime, endTime);
+        request.setAttribute("meals", mealsFilteredByTime);
+        request.getRequestDispatcher("/meals.jsp").forward(request, response);
     }
 
     public void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -61,7 +87,7 @@ public class MealRestController extends AbstractMealController {
     private void getListOfMeals(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         log.info("getAll");
         request.setAttribute("meals",
-                MealsUtil.getTos(super.getAll(SecurityUtil.authUserId(), LocalTime.MIN, LocalTime.MAX), MealsUtil.DEFAULT_CALORIES_PER_DAY));
+                MealsUtil.getTos(super.getAll(SecurityUtil.authUserId(), LocalDate.MIN, LocalDate.MAX), MealsUtil.DEFAULT_CALORIES_PER_DAY));
         request.getRequestDispatcher("/meals.jsp").forward(request, response);
     }
 
