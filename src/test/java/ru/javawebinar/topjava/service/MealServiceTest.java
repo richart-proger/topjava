@@ -1,14 +1,19 @@
 package ru.javawebinar.topjava.service;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.util.exception.NotFoundException;
 
@@ -28,14 +33,53 @@ import static ru.javawebinar.topjava.UserTestData.USER_ID;
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
 public class MealServiceTest {
 
+    private static final Logger log = LoggerFactory.getLogger(MealServiceTest.class);
+    @Rule
+    public final ExpectedException thrown = ExpectedException.none();
     @Autowired
     private MealService service;
+    private String result;
+    private long start;
+    private double duration;
+    @Rule
+    public TestWatcher testWatcher = new TestWatcher() {
+        @Override
+        protected void succeeded(Description description) {
+            result = "success";
+        }
+
+        @Override
+        protected void failed(Throwable e, Description description) {
+            result = "failed";
+        }
+
+        @Override
+        protected void starting(Description description) {
+            start = System.currentTimeMillis();
+        }
+
+        @Override
+        protected void finished(Description description) {
+            duration = (start - System.currentTimeMillis()) / 1000.0;
+            log.info("Test \"{}\" {} , lasted for {} sec", description.getMethodName(), result, duration);
+            mapTimeTests.put(description.getMethodName(), duration);
+            if (mapTimeTests.size() == 13) {
+                printTestInfo();
+            }
+        }
+    };
+
+    private void printTestInfo() {
+        System.out.println("----------------------------------");
+        mapTimeTests
+                .forEach((key, value) -> System.out.println(String.format("Test method \"%s\" duration: %f sec", key, value)));
+        System.out.println("----------------------------------");
+    }
 
     @Test
     public void delete() {
         service.delete(MEAL1_ID, USER_ID);
         assertThrows(NotFoundException.class, () -> service.get(MEAL1_ID, USER_ID));
-//        MEAL_MATCHER.assertMatch(service.getAll(USER_ID), MEAL6, MEAL5, MEAL4, MEAL3, MEAL2);
     }
 
     @Test
@@ -102,8 +146,8 @@ public class MealServiceTest {
     @Test
     public void getBetweenInclusive() {
         MEAL_MATCHER.assertMatch(service.getBetweenInclusive(
-                        LocalDate.of(2020, Month.JANUARY, 30),
-                        LocalDate.of(2020, Month.JANUARY, 30), USER_ID),
+                LocalDate.of(2020, Month.JANUARY, 30),
+                LocalDate.of(2020, Month.JANUARY, 30), USER_ID),
                 meal3, meal2, meal1);
     }
 
