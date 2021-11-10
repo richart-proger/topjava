@@ -96,5 +96,7 @@
     <beans profile="jpa">
     </beans>
     <beans profile="datajpa">
+        <bean id="DataJpaMealRepository"
+              class="ru/javawebinar/topjava/repository/datajpa/DataJpaMealRepository.java" />
     </beans>
 </beans>
