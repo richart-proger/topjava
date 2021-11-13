@@ -6,9 +6,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import static ru.javawebinar.topjava.Profiles.POSTGRES_DB;
+
 @Repository
-@Profile("postgres")
-public class JdbcMealRepositoryForPostgres extends AbstractJdbcMealRepository{
+@Profile(POSTGRES_DB)
+public class JdbcMealRepositoryForPostgres extends AbstractJdbcMealRepository {
     @Autowired
     public JdbcMealRepositoryForPostgres(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         super(jdbcTemplate, namedParameterJdbcTemplate);

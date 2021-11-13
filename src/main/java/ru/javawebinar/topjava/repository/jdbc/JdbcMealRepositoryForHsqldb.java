@@ -12,8 +12,10 @@ import ru.javawebinar.topjava.util.DateTimeUtil;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.javawebinar.topjava.Profiles.HSQL_DB;
+
 @Repository
-@Profile("hsqldb")
+@Profile(HSQL_DB)
 public class JdbcMealRepositoryForHsqldb extends AbstractJdbcMealRepository {
     @Autowired
     public JdbcMealRepositoryForHsqldb(JdbcTemplate jdbcTemplate, NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
