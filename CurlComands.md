@@ -1,4 +1,4 @@
-## CURL Commands TopJava
+## CURL TopJava Commands for Windows
 
 ### Get All Meals
 
@@ -20,9 +20,10 @@ application/json" http://localhost:8080/topjava/rest/profile/meals/100011 --user
 
 ### Delete Meal
 
-curl -s -X DELETE http://localhost:8080/topjava/rest/profile/meals/100011 --user user@yandex.ru:password 
+curl -s -X DELETE http://localhost:8080/topjava/rest/profile/meals/100011 --user user@yandex.ru:password
 
-###Filter Meals
+### Filter Meals
+
 curl
 -s "http://localhost:8080/topjava/rest/profile/meals/between?startDateTime=2020-01-30T12:00:00&endDateTime=2021-04-30T20:00:00"
 --user user@yandex.ru:password
