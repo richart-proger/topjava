@@ -90,7 +90,37 @@ class MealRestControllerTest extends AbstractControllerTest {
     void getBetween() throws Exception {
         List<MealTo> mealTos = List.of(MealsUtil.createTo(meal6, true), MealsUtil.createTo(meal2, false));
 
-        perform(get(REST_URL + "/filter?startDateTime=2020-01-30T12:00:00&endDateTime=2021-04-30T20:00:00"))
+        perform(get(REST_URL + "/between?startDateTime=2020-01-30T12:00:00&endDateTime=2021-04-30T20:00:00"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MEAL_TO_MATCHER.contentJson(mealTos));
+    }
+
+    @Test
+    void getFilter() throws Exception {
+        List<MealTo> mealTos = List.of(
+                MealsUtil.createTo(meal5, true),
+                MealsUtil.createTo(meal4, true),
+                MealsUtil.createTo(meal1, false));
+
+        perform(get(REST_URL + "/filter?startDate=2020-01-30&endDate=2021-04-30&startTime=00:00&endTime=13:00"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MEAL_TO_MATCHER.contentJson(mealTos));
+    }
+
+    @Test
+    void getFilterWithAll() throws Exception {
+        List<MealTo> mealTos = List.of(
+                MealsUtil.createTo(meal7, true),
+                MealsUtil.createTo(meal6, true),
+                MealsUtil.createTo(meal5, true),
+                MealsUtil.createTo(meal4, true),
+                MealsUtil.createTo(meal3, false),
+                MealsUtil.createTo(meal2, false),
+                MealsUtil.createTo(meal1, false));
+
+        perform(get(REST_URL + "/filter?startDate=&endDate=&startTime=&endTime="))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(MEAL_TO_MATCHER.contentJson(mealTos));
