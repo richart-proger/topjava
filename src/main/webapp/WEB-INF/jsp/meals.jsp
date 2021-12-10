@@ -59,7 +59,7 @@
                 <th></th>
             </tr>
             </thead>
-            <c:forEach items="${meals}" var="meal">
+            <c:forEach items="${requestScope.meals}" var="meal">
                 <jsp:useBean id="meal" type="ru.javawebinar.topjava.to.MealTo"/>
                 <tr data-meal-excess="${meal.excess}">
                     <td>
@@ -80,7 +80,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="modalTitle"><spring:message code="meal.add"/></h4>
-                <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()"></button>
+                <button type="button" class="close" data-dismiss="modal" onclick="closeNoty()">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="detailsForm">
@@ -107,7 +107,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeNoty()">
                     <span class="fa fa-close"></span>
                     <spring:message code="common.cancel"/>
                 </button>

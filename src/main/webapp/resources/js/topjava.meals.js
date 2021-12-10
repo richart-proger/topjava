@@ -1,4 +1,4 @@
-const mealAjaxUrl = "/profile/meals";
+const mealAjaxUrl = "profile/meals/";
 
 const ctx = {
     ajaxUrl: mealAjaxUrl,
@@ -38,7 +38,7 @@ $(function () {
             "order": [
                 [
                     0,
-                    "asc"
+                    "desc"
                 ]
             ]
         })

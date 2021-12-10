@@ -16,7 +16,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 @RestController
-@RequestMapping("/profile/meals")
+@RequestMapping(value = "/profile/meals", produces = MediaType.APPLICATION_JSON_VALUE)
 public class MealUIController extends AbstractMealController {
     private final Logger log = LoggerFactory.getLogger(MealUIController.class);
 
@@ -37,11 +37,10 @@ public class MealUIController extends AbstractMealController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void createOrUpdate(@RequestParam @Nullable Integer id,
-                               @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateTime,
+    public void createOrUpdate(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateTime,
                                @RequestParam String description,
                                @RequestParam int calories) {
-        Meal meal = new Meal(id, dateTime, description, calories);
+        Meal meal = new Meal(dateTime, description, calories);
         if (meal.isNew()) {
             log.info("create {}", meal);
             super.create(meal);
