@@ -3,7 +3,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <html>
-<jsp:include page="fragments/headTag.jsp"/>
+<jsp:include page="/WEB-INF/jsp/fragments/headTag.jsp"/>
 <body>
 <nav class="navbar navbar-dark bg-dark py-0">
     <div class="container">
@@ -65,7 +65,7 @@
 </div>
 <div class="container lead"><spring:message code="app.description"/>
 </div>
-<jsp:include page="fragments/footer.jsp"/>
+<jsp:include page="/WEB-INF/jsp/fragments/footer.jsp"/>
 <script type="text/javascript">
     function login(username, password) {
         $('input[name="username"]').val(username);
