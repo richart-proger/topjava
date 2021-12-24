@@ -37,4 +37,12 @@ public class MealTestData {
     public static Meal getUpdated() {
         return new Meal(MEAL1_ID, meal1.getDateTime().plus(2, ChronoUnit.MINUTES), "Обновленный завтрак", 200);
     }
+
+    public static Meal getUpdatedInvalid() {
+        return new Meal(MEAL1_ID, null, null, 0);
+    }
+
+    public static Meal getCreatedInvalid() {
+        return new Meal(null, null, null, -10);
+    }
 }

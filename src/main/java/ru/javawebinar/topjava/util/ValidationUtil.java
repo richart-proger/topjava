@@ -73,12 +73,4 @@ public class ValidationUtil {
         Throwable rootCause = NestedExceptionUtils.getRootCause(t);
         return rootCause != null ? rootCause : t;
     }
-
-//    public static ResponseEntity<String> getErrorResponse(BindingResult result) {
-//        return ResponseEntity.unprocessableEntity().body(
-//                result.getFieldErrors().stream()
-//                        .map(fe -> String.format("[%s] %s", fe.getField(), fe.getDefaultMessage()))
-//                        .collect(Collectors.joining("<br>"))
-//        );
-//    }
 }
