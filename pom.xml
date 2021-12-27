@@ -20,6 +20,7 @@
         <spring.security.version>5.6.0</spring.security.version>
         <spring-data-jpa.version>2.6.0</spring-data-jpa.version>
         <jackson.version>2.13.0</jackson.version>
+        <json-path.version>2.6.0</json-path.version>
 
         <tomcat.version>9.0.54</tomcat.version>
 
@@ -258,7 +259,7 @@
                     <artifactId>jquery</artifactId>
                 </exclusion>
                 <exclusion>
-<!--                https://getbootstrap.com/docs/4.5/components/popovers         -->
+                    <!--                https://getbootstrap.com/docs/4.5/components/popovers         -->
                     <groupId>org.webjars</groupId>
                     <artifactId>popper.js</artifactId>
                 </exclusion>
@@ -316,7 +317,12 @@
             <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <version>${json-path.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
