@@ -3,11 +3,12 @@
 ![cv](https://cloud.githubusercontent.com/assets/13649199/10877471/93ea86b8-8157-11e5-9bfa-95e3fba75c58.jpg)
 
 -  <a href="http://habrahabr.ru/company/ua-hosting/blog/272617/">Научиться программировать сложнее, чем кажется</a>
-- [Собеседование. Разработка ПО. Вопросы.](https://drive.google.com/open?id=0B9Ye2auQ_NsFQVc2WUdCR0xvLWM)
+- [Собеседование. Разработка ПО. Вопросы.](https://drive.google.com/file/d/0B9Ye2auQ_NsFQVc2WUdCR0xvLWM/view?usp=sharing&resourcekey=0-HaWoRxoyboMSKjg5P2I1cQ)
 - [Набор ссылок для тренировки и прохождения интервью](https://github.com/andreis/interview)
 
 ### Составление резюме:
 -  [VisualCV: create resume in minutes](https://www.visualcv.com/)
+-  [Build a job-winning resume for free](https://flowcv.io/start-resume)
 -  <a href="http://resumup.com/">Выбрать шаблон для резюме</a>
 -  [GitHub Pages](https://pages.github.com/), <a href="https://github.com/jglovier/resume-template">Resume template</a>
 -  <a href="http://lifehacker.ru/2015/04/07/33-lajfhaka-dlya-rezyume/">Как продать свое резюме в 2 раза дороже</a>
@@ -39,6 +40,7 @@
 - <a href="https://www.youtube.com/watch?v=hry2CNuOxBg">Михаил Портнов. Собеседование на работу: жизненный путь</a>
 - [Лёша Корепанов. Признаки плохих компаний для программиста](https://www.youtube.com/watch?v=Sj-WSWr-n7U)
 - [Лёша Корепанов. Как отвечать на вопросы, которые ты не знаешь. Техническое интервью для программиста](https://www.youtube.com/watch?v=Beoh3tfgPEk)
+- [Виталием Карнаух. Топ 7 ошибок на собеседование в it компанию](https://www.youtube.com/watch?v=IcFBsPN2U2g)
 - <a href="https://www.youtube.com/playlist?list=PL7XXjge0nKZczMtQbNk9c2cplvuLZomTh">Канал: Резюме, поиск работы, интервью</a>
 -  <a href="https://www.youtube.com/watch?v=ft0Nj8Cm9kk">Яков Файн: Как стать профессиональным Java разработчиком</a>
 -  <a href="https://jsehelper.blogspot.ru/p/blog-page.html">Ответы на вопросы на собеседовании Junior Java Developer</a>
@@ -50,7 +52,7 @@
 -  <a href="http://habrahabr.ru/post/181033/">Тест на знание SQL</a>
 -  <a href="http://jsehelper.blogspot.ru/p/blog-page.html">Вопросы на собеседовании Java Junior Developer</a>
 -  <a href="https://play.google.com/store/apps/details?id=com.ab.jiq">Java вопросы с собеседований на Android</a>
--  <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFLTRFY293RUVPVms">Сборка вопросов от JavaRush</a>
+-  <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFLTRFY293RUVPVms/view?usp=sharing&resourcekey=0-TXwkTG380W0Dm04cdZa4NA">Сборка вопросов от JavaRush</a>
 > про clone и finalize объязательно прочтите <a href="http://www.ozon.ru/context/detail/id/24828676/">Джошуа Блох: Java. Эффективное программирование (второе издание)</a>
 
 -  <a href="http://bookvoed.ru/book?id=2593572">Cracking the Coding Interview</a>
@@ -59,13 +61,13 @@
 
 ### От себя:
 -  email, skype - очень желательно, чтобы по ним вы были узнаваемы. Заведите рабочие, если не так.
--  написать ВЕСЬ IT опыт (исключая опыт пользователя: Windows, MS Word, Photophop, Yandex disk, Google docs, ..): технологии, какие задачи решали (конкретные), какие инструменты использовали, VCS, DB, инструменты сборки, ... включая опыт в ВУЗе.
--  на English иметь желательно. Если вакансия опублинована на Englsih - шлите на нем. Часто могут на нем попросить, если работодатель иностранный.
--  удобно иметь резюме где то в инете (hh, linkedin, google doc, чтобы им было удобно делиться).
+-  написать ВЕСЬ IT опыт (исключая опыт пользователя: Windows, MS Word, Photoshop, Yandex disk, Google docs, ..): технологии, какие задачи решали (конкретные), какие инструменты использовали, VCS, DB, инструменты сборки, ... включая опыт в ВУЗе.
+-  на English иметь желательно. Если вакансия опубликована на Englsih - шлите на нем. Часто могут на нем попросить, если работодатель иностранный.
+-  удобно иметь резюме где-то в инете (hh, linkedin, google doc, чтобы им было удобно делиться).
 
 ### Позиционирование <a href="https://github.com/JavaOPs/topjava/blob/master/description.md">проекта Topjava</a>:
 - Обязательно убери из резюме **любое упоминание Junior**. Количество обращений возрастет на порядок. Ссылку на стажировку можно поставить: http://javaops.ru/view/topjava (в linkedin: https://www.linkedin.com/company/java-online-projects).
--  После завершения проекта ты освошь все заявленные в нем технологии - вставь их в квалификацию (включая java 8 Stream and Time API). 
+-  После завершения проекта ты освоишь все заявленные в нем технологии - вставь их в квалификацию (включая java 8 Stream and Time API).
 - В разделе опыт работы (если нет коммерческого опыта) вставь:
 
         Участие в разработке Spring/JPA Enterprise приложения c авторизацией и правами доступа на основе ролей 
@@ -94,16 +96,16 @@
 - [headz.io](https://app.headz.io/candidates/new)
 - <a href="http://djinni.co/">djinni.co (более актуально для Украины)</a>
 
-
+[Как изучать Java. Подборка от JavaRush](https://javarush.ru/groups/posts/3538-v-zakladki-kak-izuchatjh-java-boljhshaja-podborka-po-planu-obuchenija-instrumentam-i-poiskam-mo)  
 <h2 id="probation">Как выжить на испытательном сроке</h2>
 
 - Учись грамотно формулировать проблему. Проблема "у меня не работает" может иметь тысячи причин. В
-                процессе формулирования очень часто приходит ее решение.
+  процессе формулирования очень часто приходит ее решение.
 - Учись инвестигировать проблему. Внимательное чтение логов и умение дебажить - основные навыки
-                разработчика. В логах надо читать верх самого нижнего эксепшена - там причина всей портянки.
+  разработчика. В логах надо читать верх самого нижнего эксепшена - там причина всей портянки.
 - Грамотно уделяй время каждой проблеме. Две крайности - сразу бросаться за помощью и
-                бится нам ней часами.
-                Пробуй решить ее сам и в зависимости от проблемы выделяй на это разумное время.
+  биться нам ней часами.
+  Пробуй решить ее сам и в зависимости от проблемы выделяй на это разумное время.
 - Если тебе что-то объясняют по проекту - обязательно записывай.</li>
 - Когда получаешь задачу - уточни все очень подробно.</li>
 - Получай в процессе решения обратную связь - в том ли направлении ты идешь.</li>
@@ -118,6 +120,9 @@
 - [Нетехнические навыки](https://tproger.ru/experts/softskills-for-job)
 - Видео [Junior и испытательный срок на первой работе](https://www.youtube.com/watch?v=GsGlsCbok-c)
 - Типичные ошибки начинающих программистов от JavaRush:
-  - [Часть 1](https://javarush.ru/groups/posts/3044-razbor-tipichnihkh-oshibok-nachinajujshikh-programmistov-chastjh-1)
-  - [Часть 2](https://javarush.ru/groups/posts/3055-razbor-tipichnihkh-oshibok-nachinajujshikh-programmistov-chastjh-2)
+    - [Часть 1](https://javarush.ru/groups/posts/3044-razbor-tipichnihkh-oshibok-nachinajujshikh-programmistov-chastjh-1)
+    - [Часть 2](https://javarush.ru/groups/posts/3055-razbor-tipichnihkh-oshibok-nachinajujshikh-programmistov-chastjh-2)
+- [От джуна к миддлу: практические советы](https://tproger.ru/articles/ot-dzhuna-k-middlu-prakticheskie-sovety)
+- [Виталием Карнаух. Ошибки, которых лучше избежать начинающим](https://www.youtube.com/watch?v=GNeyP7lAHAY)
+- [Лёша Корепанов. 12 вещей о ПРОГРАММИРОВАНИИ, которые я хотел бы знать в 20 лет](https://www.youtube.com/watch?v=Z9FvlPpSS3U)
 ## [Отзывы по стажировке Topjava](https://vk.com/topic-74381644_30447246)
